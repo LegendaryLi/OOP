@@ -1,20 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 
-class Program
+public class Program
 {
-    string programmerfam;
-    string progi;
-    string languages;
+    private string programmerfam;
+    private string progi;
+    private string languages;
 
-    static void Main(string[] args)
+    public Program(string programmerfaml, string progil, string languagesl)
     {
+        programmerfam = programmerfaml;
+        progi = progil;
+        languages = languagesl;
+    }
+
+    static void Main()
+    {
+
         Console.WriteLine("Введите фамилию:");
-        string programmerfam = Convert.ToString(Console.ReadLine());
+        string pf = Convert.ToString(Console.ReadLine());
         
 
         List<info> list = new List<info>();
-        list.Add(new info() { programmerfam = programmerfam, progi = "Количество прог = 3", languages = "Количество языков = 2" });
+        list.Add(new info() { programmerfam = pf, progi = "Количество прог = 3", languages = "Количество языков = 2" });
 
         foreach(info i in list)
         {
@@ -35,10 +43,10 @@ class Program
         switch(languages)
         {
             case 2:
-                Console.WriteLine("Вы подтвердили значения");
+                Console.WriteLine("Вы подтвердили значение одно из значений(1/2)");
                 break;
             default:
-                Console.WriteLine("Вы ввели неверное значение!!!");
+                Console.WriteLine("Вы ввели неверные значения!!!");
                 break;
                     switch(progi)
                     {
@@ -46,7 +54,7 @@ class Program
                             Console.WriteLine("Вы подтвердили значение одно из значений(1/2)");
                             break;
                         default:
-                            Console.WriteLine("Вы ввели неверное значение!!!");
+                            Console.WriteLine("Вы подтвердили значение одно из значений(1/2)");
                             break;
                     }
                         if (languages == default)
@@ -78,10 +86,11 @@ class Program
         }
 
     }
-    class info
-    {
-        public string programmerfam { get; set; }
-        public string progi { get; set; }
-        public string languages { get; set; }
-    }
+   
+} 
+class info
+{
+  public string programmerfam { get; set; }
+  public string progi { get; set; }
+  public string languages { get; set; }
 }
